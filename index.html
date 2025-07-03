@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Stock Price Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/4.10.0/tf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Advanced AI Stock Predictor</h1>
+            <p>Neural Networks • Sentiment Analysis • Deep Learning • Ensemble Models</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <div class="form-group">
+                        <label for="stockSymbol">Stock Symbol</label>
+                        <input type="text" id="stockSymbol" placeholder="e.g., AAPL, TSLA, GOOGL" value="AAPL">
+                    </div>
+                    <div class="form-group">
+                        <label for="predictionDays">Prediction Timeframe</label>
+                        <select id="predictionDays">
+                            <option value="1">Next Day</option>
+                            <option value="7" selected>Next Week</option>
+                            <option value="30">Next Month</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="predict-btn" onclick="predictStock()">🚀 Analyze & Predict</button>
+                    </div>
+                </div>
+
+                <div class="model-selector">
+                    <div class="model-toggle active" onclick="toggleModel('linear')">
+                        <input type="checkbox" id="linear" checked>
+                        <label for="linear">Linear Regression</label>
+                    </div>
+                    <div class="model-toggle active" onclick="toggleModel('neural')">
+                        <input type="checkbox" id="neural" checked>
+                        <label for="neural">Neural Network</label>
+                    </div>
+                    <div class="model-toggle active" onclick="toggleModel('sentiment')">
+                        <input type="checkbox" id="sentiment" checked>
+                        <label for="sentiment">Sentiment Analysis</label>
+                    </div>
+                    <div class="model-toggle active" onclick="toggleModel('logistic')">
+                        <input type="checkbox" id="logistic" checked>
+                        <label for="logistic">Logistic Regression</label>
+                    </div>
+                    <div class="model-toggle active" onclick="toggleModel('svm')">
+                        <input type="checkbox" id="svm" checked>
+                        <label for="svm">Support Vector Machine</label>
+                    </div>
+                    <div class="model-toggle active" onclick="toggleModel('ensemble')">
+                        <input type="checkbox" id="ensemble" checked>
+                        <label for="ensemble">Ensemble Model</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingSection" class="loading" style="display: none;">
+                Training neural networks and analyzing market sentiment...
+            </div>
+
+            <div id="errorSection" class="error" style="display: none;"></div>
+
+            <div id="resultsSection" class="results-section">
+                <div class="sentiment-section">
+                    <h3>📊 Market Sentiment Analysis</h3>
+                    <p>Real-time sentiment analysis from news, social media, and market indicators</p>
+                    <div class="sentiment-indicators">
+                        <div class="sentiment-indicator">
+                            <div class="sentiment-score positive" id="bullishScore">0%</div>
+                            <div>Bullish</div>
+                        </div>
+                        <div class="sentiment-indicator">
+                            <div class="sentiment-score neutral" id="neutralScore">0%</div>
+                            <div>Neutral</div>
+                        </div>
+                        <div class="sentiment-indicator">
+                            <div class="sentiment-score negative" id="bearishScore">0%</div>
+                            <div>Bearish</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prediction-grid" id="predictionGrid">
+                    <!-- Predictions will be dynamically added here -->
+                </div>
+
+                <div class="model-performance">
+                    <h3>🎯 Model Performance Metrics</h3>
+                    <div class="performance-grid" id="performanceGrid">
+                        <!-- Performance metrics will be added here -->
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>🔬 Advanced ML Models Explanation</h3>
+                <p><strong>Neural Network:</strong> Deep learning model with multiple layers that learns complex patterns in stock price movements and market behavior.</p>
+                <p><strong>Sentiment Analysis:</strong> Natural language processing that analyzes news headlines, social media posts, and market sentiment to predict price movements.</p>
+                <p><strong>Logistic Regression:</strong> Statistical model that predicts the probability of stock price direction (up/down) based on historical patterns.</p>
+                <p><strong>Support Vector Machine:</strong> Advanced algorithm that finds optimal decision boundaries for classifying market trends and price movements.</p>
+                <p><strong>Ensemble Model:</strong> Combines predictions from multiple models using weighted averaging and voting mechanisms for improved accuracy.</p>
+                <p><em>Disclaimer: All predictions are for educational purposes only. Market conditions are unpredictable and past performance doesn't guarantee future results.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
