@@ -13,7 +13,7 @@ An interactive, multi-model stock prediction dashboard built with **JavaScript, 
 - **Sentiment Analysis**
   - Simulates sentiment scores from news and social media
   - Real-time bullish, bearish, and neutral sentiment indicators
-  - Price adjustment based on sentiment scores
+  - Price adjustment based on sentiment score
 - **Logistic Regression**
   - Predicts direction of price movement (up/down)
   - Binary classification using gradient descent
@@ -70,17 +70,6 @@ An interactive, multi-model stock prediction dashboard built with **JavaScript, 
 
 > This project is for **educational and demonstrative purposes only**.  
 > It does not provide financial advice. Use at your own risk.
-
----
-
-## 📂 Project Structure
-📁 project-root/
-├── index.html # Main UI and logic
-├── styles.css # Styling
-├── script.js # JavaScript ML logic and charting
-├── README.md # You're here!
-
-
 
 ---
 

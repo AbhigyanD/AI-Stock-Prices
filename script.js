@@ -25,7 +25,7 @@ async function createNeuralNetwork(inputData, outputData) {
     const ys = tf.tensor1d(outputData);
 
     await model.fit(xs, ys, {
-        epochs: 50,
+        epochs: 50, 
         batchSize: 8,
         validationSplit: 0.2,
         verbose: 0
